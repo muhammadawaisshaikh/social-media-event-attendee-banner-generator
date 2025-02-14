@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Sharing | Event Banner Generator | Marketing Events</title>
+  <link rel="stylesheet" href="./styles.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Include jQuery Cropper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+</head>
+
+<body>
+  <div class="container pt-5">
+    <h1 class="text-center">Event Attending Poster Generator</h1>
+    <hr>
+    <div class="row py-3">
+      <div class="col-md-4 col-12">
+        <h4>Attendee Information</h4>
+        <hr>
+        <div class="form-container pt-3">
+          <!-- preview image  -->
+          <div id="imagePreview" class="text-center rounded">
+            <img id="previewImage" src="" alt="Image Preview" class="border mb-3 p-5" onclick="imageUpload.click()"
+              style="max-width: 100%;" />
+          </div>
+
+          <!-- Image Upload -->
+          <input type="file" class="d-none form-control mb-3" id="imageUpload" accept="image/*" />
+
+          <!-- Cropper Container -->
+          <div id="cropperContainer" style="display: none; margin-top: 20px;">
+            <img id="imageToCrop" src="" alt="Upload to crop" style="max-width: 100%;" />
+            <button class="btn btn-primary my-3" id="cropImageBtn">Crop Image</button>
+          </div>
+
+          <input type="text" class="d-block form-control mb-3" id="nameInput" placeholder="Full Name" />
+          <input type="text" class="d-block form-control mb-3" id="designationInput" placeholder="Designation" />
+          <input type="text" class="d-block form-control mb-3" id="companyInput" placeholder="Company" />
+          <button class="btn btn-warning w-100 mt-3" onclick="generateBanner()">Generate Banner</button>
+        </div>
+      </div>
+      <div class="col-md-8 col-12 mt-sm-0 mt-5">
+        <h4>Attendee Banner</h4>
+        <hr>
+        <div class="banner-container pt-3">
+          <canvas id="downloadCanvas" class="w-100"></canvas>
+          <a id="downloadLink" style="display: none;">Download Banner</a>
+
+          <div id="infoArea" class="pt-5">
+            <h3>How to Use the Generated Banner:</h3>
+            <ul>
+              <li>Save the generated banner image</li>
+              <li>Share it on your socials <strong>eg. Instagram | Linkedin</strong></li>
+              <li>Add hashtags: <strong>#amazonwebservices #awsugkarachi #awscommunitypakistan #awscloud #aws</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
